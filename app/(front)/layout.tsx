@@ -5,7 +5,7 @@ export default function layout({children}: {children:ReactNode}){
   return (
     <div>
       <Navbar />
-        <div className="bg-gray-500 text-gray-950 pl-10 p-3 ">
+        <div className="bg-green-300 text-gray-950 pl-10 p-3 ">
         <MegaMenu />
       </div>
         {children}
