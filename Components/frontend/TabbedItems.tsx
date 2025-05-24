@@ -2,7 +2,8 @@
 
 import { TabItem, Tabs } from "flowbite-react";
 import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
-import { MdDashboard } from "react-icons/md";
+
+import ServiceList from "./Services/ServiceList";
 
 export default function TabbedItems() {
     const tabs= [
@@ -43,13 +44,13 @@ export default function TabbedItems() {
             tabs.map((tab ,i)=>{
                 return(
                         <TabItem key={i} active title={tab.title} icon={tab.icon}>
-            T           his is <span className="font-medium text-gray-800 dark:text-white">Profile tab's associated content</span>.
-                        Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to
-                        control the content visibility and styling.
-      </TabItem>
+                           <ServiceList></ServiceList>
+                        </TabItem>
+      
                 )
             })
         }
+     
     </Tabs>
   );
 }

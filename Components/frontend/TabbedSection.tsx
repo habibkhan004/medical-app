@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import TabbedItems from "@/Components/frontend/TabbedItems";
 const TabbedSection = () => {
