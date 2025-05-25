@@ -1,15 +1,51 @@
 "use client";
 
 import { TabItem, Tabs } from "flowbite-react";
-import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
+import { Stethoscope, Microscope, Activity, Syringe } from "lucide-react";
 
 import ServiceList from "./Services/ServiceList";
+import LinkCards from "./Doctors/LinkCards";
 
 export default function TabbedItems() {
+
+    const services = [
+        {
+            title: "Telehealth",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        {
+            title: "In person meeting",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        {
+            title: "In Person Meeting",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        {
+            title: "Mental Health",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        {
+            title: "UTI Consult",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        {
+            title: "ED Consult",
+            image: "/stetho.jpeg",
+            slug : "tele-health",
+        },
+        
+    ]
     const tabs= [
         {
             title: "Popular Services",
-            icon : HiUserCircle,
+            icon : Stethoscope,
+            component: <ServiceList data={services} />,
             content: [
 
             ]
@@ -17,21 +53,24 @@ export default function TabbedItems() {
 
         {
             title: "Doctors",
-            icon : HiUserCircle,
+            icon : Microscope,
+            component : <LinkCards className="bg-slate-700"/>,
             content: [
                 
             ]
         },
         {
             title: "Specialists",
-            icon : HiUserCircle,
+            component : <LinkCards className="bg-blue-950"/>,
+            icon : Activity,
             content: [
                 
             ]
         },
         {
             title: "Symptoms",
-            icon : HiUserCircle,
+            icon : Syringe,
+            component : <LinkCards className="bg-green-600"/>,
             content: [
                 
             ]
@@ -44,7 +83,7 @@ export default function TabbedItems() {
             tabs.map((tab ,i)=>{
                 return(
                         <TabItem key={i} active title={tab.title} icon={tab.icon}>
-                           <ServiceList></ServiceList>
+                        {tab.component}
                         </TabItem>
       
                 )
