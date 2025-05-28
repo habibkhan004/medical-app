@@ -8,7 +8,8 @@ export default function layout({children}: {children:ReactNode}){
         <div className="bg-green-300 text-gray-950 pl-10 p-3 ">
         <MegaMenu />
       </div>
-        {children}
+      <div className="pt-6"> {children}</div>
+       
     </div>
   )
 }
