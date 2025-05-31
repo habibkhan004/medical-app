@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import {
   Dialog,
   DialogPanel,
@@ -29,7 +30,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-blue-950 ">
+    <header className="bg-gray-900 ">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -52,7 +53,7 @@ export default function Navbar() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-         
+
 
           <a href="#" className="text-sm/6 font-semibold text-gray-200">
             Features
@@ -65,9 +66,12 @@ export default function Navbar() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-gray-200 bg-blue-500 rounded-md px-6 py-3">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Link href="/login" className="text-sm/6 font-semibold text-gray-200 bg-blue-500 rounded-md mr-2 px-6 py-2">
+            Log in
+          </Link>
+          <Link href="/register" className="text-sm/6 font-semibold text-gray-200 bg-blue-500 rounded-md px-6 py-2">
+            Sign Up
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -115,12 +119,18 @@ export default function Navbar() {
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block  text-base/7 font-semibold text-gray-200  hover:bg-gray-50 bg-blue-500 rounded-md px-6 py-3"
+                <Link
+                  href="/login"
+                  className="  text-base/7 font-semibold text-gray-200  hover:bg-gray-50 bg-blue-500 rounded-md px-6 py-3"
                 >
                   Log in
-                </a>
+                </Link>
+                <Link
+                  href="/register"
+                  className="ml-2 text-base/7 font-semibold text-gray-200  hover:bg-gray-50 bg-blue-500 rounded-md px-6 py-3"
+                >
+                  Sign Up
+                </Link>
               </div>
             </div>
           </div>

@@ -1,15 +1,15 @@
-import React, {ReactNode} from  'react'
+import React, { ReactNode } from 'react'
 import Navbar from '@/Components/frontend/Navbar'
 import { MegaMenu } from '@/Components/frontend/MegaMenu'
-export default function layout({children}: {children:ReactNode}){
+export default function layout({ children }: { children: ReactNode }) {
   return (
     <div>
       <Navbar />
-        <div className="bg-green-300 text-gray-950 pl-10 p-3 ">
+      <div className="p-2 bg-gray-100">
         <MegaMenu />
       </div>
-      <div className="pt-6"> {children}</div>
-       
+      <div className="pt-4"> {children}</div>
+
     </div>
   )
 }

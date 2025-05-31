@@ -14,135 +14,138 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/Components/ui/navigation-menu"
+import { usePathname } from "next/navigation"
 
 const megaMenu = [
   {
     tite: "Top Booked",
-    services : [
+    services: [
       {
         tile: "Telehealth",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "Video prescription refill",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "In person visit",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "UTI Consult",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
     ]
   },
   {
     tite: "Doctors",
-    services : [
+    services: [
       {
         tile: "Telehealth",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "Video prescription refill",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "In person visit",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "UTI Consult",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
     ]
   },
   {
     tite: "Specialists",
-    services : [
+    services: [
       {
         tile: "Telehealth",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "Video prescription refill",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "In person visit",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "UTI Consult",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
     ]
   },
   {
     tite: "Symptoms",
-    services : [
+    services: [
       {
         tile: "Telehealth",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "Video prescription refill",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "In person visit",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
       {
         tile: "UTI Consult",
-        slug : "tele-health",
+        slug: "tele-health",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illo necessitatibus, odio culpa deleniti consequatur aspernatur labore consectetur dolorem quibusdam"
       },
     ]
   },
 ]
 export function MegaMenu() {
+  const pathname = usePathname()
+  // if (pathname == "/login") return null;
   return (
     <NavigationMenu>
       <NavigationMenuList>
-      {
-        megaMenu.map((item ,i)=>{
-          return(
-          <NavigationMenuItem key={i} className="mr-5">
-          <NavigationMenuTrigger>{item.tite}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {item.services.map((component) => (
-                <ListItem
-                  key={component.tile}
-                  title={component.tile}
-                  href={`/services ${component.slug}`}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-          )
-        })
-      }
+        {
+          megaMenu.map((item, i) => {
+            return (
+              <NavigationMenuItem key={i} className="mr-5">
+                <NavigationMenuTrigger>{item.tite}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {item.services.map((component) => (
+                      <ListItem
+                        key={component.tile}
+                        title={component.tile}
+                        href={`/services ${component.slug}`}
+                      >
+                        {component.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            )
+          })
+        }
 
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
