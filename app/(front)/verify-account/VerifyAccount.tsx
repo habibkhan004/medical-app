@@ -17,7 +17,7 @@ export default async function VerifyAccount({
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
                             Verify Account
                         </h1>
-                        <VerifyTokenForm userToken={userToken} id={id} />
+                        {/* <VerifyTokenForm userToken={userToken} id={id} /> */}
                     </div>
                 </div>
             </div>

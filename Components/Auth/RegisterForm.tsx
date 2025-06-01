@@ -10,7 +10,7 @@ import { createUser } from '@/actions/user';
 import { UserRole } from '@prisma/client';
 import { toast } from 'react-hot-toast'
 
-export default function RegisterForm({ role = "USER" }: { role: UserRole }) {
+export default function RegisterForm({ role = "USER" }: { role?: UserRole }) {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<RegisterInputProps>();
     const [isLoading, setIsLoading] = useState(false)
     async function onSubmit(data: RegisterInputProps) {
