@@ -6,12 +6,31 @@ import { Span } from 'next/dist/trace';
 import SubmitButton from '../FormInputs/SubmitButton';
 import TextInputs from '../FormInputs/TextInputs';
 import { useState } from 'react';
+import { createUser } from '@/actions/user';
+import { UserRole } from '@prisma/client';
+import { toast } from 'react-hot-toast'
 
-export default function RegisterForm() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<RegisterInputProps>();
+export default function RegisterForm({ role = "USER" }: { role: UserRole }) {
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<RegisterInputProps>();
     const [isLoading, setIsLoading] = useState(false)
     async function onSubmit(data: RegisterInputProps) {
-        console.log(data)
+        setIsLoading(true)
+        data.role = role;
+        try {
+            const user = await createUser(data)
+            if (user && user.status == 200) {
+                console.log("User Created Successfully")
+                setIsLoading(false)
+                console.log(user.data)
+                toast.success("User Created Successfully")
+                reset()
+            } else {
+                console.log(user.error)
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
     }
     return (
         <>

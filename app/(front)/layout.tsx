@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Navbar from '@/Components/frontend/Navbar'
 import { MegaMenu } from '@/Components/frontend/MegaMenu'
+import Footer from '@/Components/frontend/Footer'
 export default function layout({ children }: { children: ReactNode }) {
   return (
     <div>
@@ -9,7 +10,7 @@ export default function layout({ children }: { children: ReactNode }) {
         <MegaMenu />
       </div>
       <div className="pt-4"> {children}</div>
-
+      <Footer></Footer>
     </div>
   )
 }
