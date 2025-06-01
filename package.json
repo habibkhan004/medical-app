@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "flowbite-react patch"
+    "postinstall": "prisma generate",
+    
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
