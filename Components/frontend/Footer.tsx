@@ -8,8 +8,8 @@ export default function Footer() {
             label: "Company",
             items: [
                 {
-                    href: 'javascript:void()',
-                    name: 'Partners'
+                    href: '/join/doctors',
+                    name: 'List Your Service'
                 },
                 {
                     href: 'javascript:void()',
@@ -72,28 +72,32 @@ export default function Footer() {
         {
             title: "Linkedin",
             href: "https://www.linkedin.com/company/medical-app",
-            icon: Linkedin
+            icon: Linkedin,
+            color: "text-blue-600"
         },
         {
             title: "YouTube",
             href: "https://www.linkedin.com/company/medical-app",
-            icon: Youtube
+            icon: Youtube,
+            color: "text-red-600"
         },
         {
             title: "Twitter",
             href: "https://www.linkedin.com/company/medical-app",
-            icon: Twitter
+            icon: Twitter,
+            color: "text-blue-400"
         },
         {
             title: "Instagram",
             href: "https://www.linkedin.com/company/medical-app",
-            icon: Instagram
+            icon: Instagram,
+            color: "text-pink-600"
         },
 
     ]
 
     return (
-        <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+        <footer className="text-gray-500 font-semibold bg-white px-4 py-5 max-w-screen-xl mx-auto md:px-8">
             <div className="gap-6 justify-between md:flex">
                 <div className="flex-1">
                     <div className="max-w-xs">
@@ -133,8 +137,8 @@ export default function Footer() {
                 </div>
             </div>
             <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
-                <div className="mt-4 sm:mt-0">
-                    &copy; 2022 Float UI All rights reserved.
+                <div className="mt-4 sm:mt-0 font-semibold">
+                    &copy; {(new Date).getFullYear()}  Float UI All rights reserved.
                 </div>
                 <div className="mt-6 sm:mt-0">
                     <ul className="flex items-center space-x-4">
@@ -142,9 +146,9 @@ export default function Footer() {
                             socialLinks.map((item, i) => {
                                 const Icon = item.icon;
                                 return (
-                                    <li key={i} className="w-10 h-10 border rounded-full flex items-center justify-center">
-                                        <a href={item.href}>
-                                            <Icon className="w-6 h-6" />
+                                    <li key={i} className=" w-10 h-10  border rounded-full flex items-center justify-center">
+                                        <a href={item.href} className={item.color}>
+                                            <Icon className="w-8 h-8 " />
                                         </a>
                                     </li>
                                 )
@@ -154,13 +158,7 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <style jsx>{`
-                .svg-icon path,
-                .svg-icon polygon,
-                .svg-icon rect {
-                    fill: currentColor;
-                }
-            `}</style>
+
         </footer>
     )
 }
