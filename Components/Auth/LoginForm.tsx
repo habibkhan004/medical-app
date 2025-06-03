@@ -30,7 +30,7 @@ export default function LoginForm() {
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="space-y-4">
-                        <TextInputs label="Email Address" name="email" register={register} errors={errors} />
+                        <TextInputs label="Email Address" name="email" type='email' register={register} errors={errors} />
 
                         <div>
                             <div className="flex items-center justify-between">

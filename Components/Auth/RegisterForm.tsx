@@ -49,7 +49,7 @@ export default function RegisterForm({ role = "USER" }: { role?: UserRole }) {
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form onSubmit={handleSubmit(onSubmit)} action="#" method="POST" className="space-y-4">
                         <TextInputs label="Full Name" name="fullName" register={register} errors={errors} />
-                        <TextInputs label="Email Address" name="email" register={register} errors={errors} />
+                        <TextInputs label="Email Address" name="email" type='email' register={register} errors={errors} />
                         <TextInputs label="Phone Number" name="phone" type="tel" register={register} errors={errors} />
 
                         <div>
