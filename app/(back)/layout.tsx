@@ -1,15 +1,17 @@
+import Navbar from '@/Components/dashboard/NavBar'
+import Sidebar from '@/Components/dashboard/SideBar'
 import React, { ReactNode } from 'react'
-import NavBar from '@/Components/dashboard/NavBar'
-import SideBar from '@/Components/dashboard/SideBar'
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <NavBar></NavBar>
-      <div className="flex">
-        <SideBar></SideBar>
-        <div className="p-4">{children}</div>
+    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+      <Sidebar />
+      <div className="flex flex-col">
+        <Navbar />
+        {children}
       </div>
-
     </div>
+
+
   )
 }
